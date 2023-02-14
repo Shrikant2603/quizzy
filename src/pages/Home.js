@@ -29,7 +29,7 @@ const Home = ({ name, setName,fetchQuestions }) => {
     <div className="flex lg:place-content-around flex-col-reverse lg:flex-row">
       <div className="w-45 p-5 flex flex-col items-center font-poppins font-light ">
         <span className="text-2xl md:text-4xl lg:text-6xl text-[#426696] font-poppins lg:mt-10">
-          Quiz settings
+          Quiz setup
         </span>
         <div className="flex flex-col p-5 w-full place-content-evenly flex-basis-0.8">
             {error && <ErrorMessage>Please Fill all the fields</ErrorMessage>}
@@ -75,7 +75,18 @@ const Home = ({ name, setName,fetchQuestions }) => {
                     Hard
                 </MenuItem>
             </TextField>
-            <Button variant="contained" color="primary" size="large" onClick={handleSubmit}>
+            <Button 
+              variant="contained" 
+              size="large" 
+              onClick={handleSubmit} 
+              sx={{
+                backgroundColor: "#426696",
+                '&:hover': {
+                  backgroundColor: '#255270',
+                  transform: 'scale(1.1)',
+                },
+              }}
+            >
                 Start Quiz
             </Button>
         </div>

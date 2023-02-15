@@ -52,6 +52,9 @@ const Quiz = ({ name, questions, score, setScore, setQuestions }) => {
             color="inherit"
             size={150}
             thickness={1}
+            sx={{
+              color: '#426696'
+            }}
         />
         )}
     </div>

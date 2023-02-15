@@ -66,8 +66,8 @@ export const Questions = ({
                 key={i}
                 onClick={() => handleCheck(i)}
                 disabled={selected}
+                dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(i) }}
               >
-                {i}
               </button>
             ))}
         </div>

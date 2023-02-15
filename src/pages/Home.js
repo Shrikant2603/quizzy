@@ -24,6 +24,15 @@ const Home = ({ name, setName,fetchQuestions }) => {
         navigate("/quiz");
         }
     };
+    const sxStyle = {
+      '& .MuiInputBase-input': {
+        color: '#426696',
+      },
+      '& .MuiInputLabel-root': {
+        color: '#426696',
+      },
+    };
+    
 
   return (
     <div className="flex lg:place-content-around flex-col-reverse lg:flex-row">
@@ -31,13 +40,14 @@ const Home = ({ name, setName,fetchQuestions }) => {
         <span className="text-2xl md:text-4xl lg:text-6xl text-[#426696] font-poppins lg:mt-10">
           Quiz setup
         </span>
-        <div className="flex flex-col p-5 w-full place-content-evenly flex-basis-0.8">
+        <div className="flex flex-col p-5 w-full place-content-evenly flex-basis-0.8 h-full">
             {error && <ErrorMessage>Please Fill all the fields</ErrorMessage>}
             <TextField
                 style={{ marginBottom: 25 }}
                 label="Enter Your Name"
                 variant="outlined"
                 onChange={(e) => setName(e.target.value)}
+                sx={sxStyle}
             />
             <TextField
                 select
@@ -45,6 +55,7 @@ const Home = ({ name, setName,fetchQuestions }) => {
                 variant="outlined"
                 style={{ marginBottom: 30 }}
                 value={category}
+                sx={sxStyle}
                 onChange={(e) => setCategory(e.target.value)}
             >
             {Categories.map((cat) => (
@@ -63,15 +74,16 @@ const Home = ({ name, setName,fetchQuestions }) => {
                 variant="outlined"
                 value={difficulty}
                 onChange={(e) => setDifficulty(e.target.value)}
+                sx={sxStyle}
                 style={{ marginBottom: 30 }}
             >
-                <MenuItem key="Easy" value="easy">
+                <MenuItem key="Easy" value="easy" style={{ backgroundColor: "#426696", color: "white" }}>
                     Easy
                 </MenuItem>
-                <MenuItem key="Medium" value="medium">
+                <MenuItem key="Medium" value="medium" style={{ backgroundColor: "#426696", color: "white" }}>
                     Medium
                 </MenuItem>
-                <MenuItem key="Hard" value="hard">
+                <MenuItem key="Hard" value="hard" style={{ backgroundColor: "#426696", color: "white" }}>
                     Hard
                 </MenuItem>
             </TextField>
